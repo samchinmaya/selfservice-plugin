@@ -335,9 +335,9 @@ public class SelfBeneficiariesTPTWritePlatformServiceImpl
                         ? (Long) params.get(TRANSFER_LIMIT_PARAM_NAME)
                         : beneficiary.getTransferLimit();
         log.info(
-                "Update payload for beneficiary id={}: name={}, transferLimit={}",
+                "Update payload for beneficiary id={}: nameSent={}, transferLimit={}",
                 beneficiaryId,
-                name,
+                params.containsKey(NAME_PARAM_NAME),
                 transferLimit);
 
         Map<String, Object> changes = beneficiary.update(name, transferLimit);
